@@ -25,7 +25,7 @@ export default function Footer() {
 
           <div className={styles.column}>
             <h4 className={styles.colHead}>Connect</h4>
-            <Link href="/contact" className={styles.footLink}>Work With Us</Link>
+            <Link href="/demo" className={styles.footLink}>Schedule a Demo</Link>
             <a href="mailto:hello@soltura.ai" className={styles.footLink}>hello@soltura.ai</a>
           </div>
         </div>
