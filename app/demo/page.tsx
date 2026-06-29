@@ -10,9 +10,9 @@ interface Message {
 
 type Stage = 'qualifying' | 'final' | 'done'
 
-const WELCOME_MESSAGE = "Hi there. I'm Sofia, product specialist for Soltura OS. Tell me about your inventory challenges and I'll show you how we could help."
-const FINAL_PROMPT = "Got it. Anything else we should know before our team reviews this?"
-const CONFIRMATION_MESSAGE = "Thanks. A founder will review this within 24 hours."
+const WELCOME_MESSAGE = "Hi there. I'm Sofia, an intake specialist at Soltura. Tell me a bit about your operation — what's the core problem you're trying to solve right now?"
+const FINAL_PROMPT = "Got it. Anything else you'd like us to know before we follow up?"
+const CONFIRMATION_MESSAGE = "Thanks — someone from our team will be in touch within 1 business day."
 
 export default function ContactPage() {
   const [messages, setMessages] = useState<Message[]>([
@@ -118,31 +118,31 @@ export default function ContactPage() {
     <div className={styles.page}>
       <div className={styles.sidebar}>
         <div className={styles.sidebarContent}>
-          <span className={styles.label}>Schedule a demo</span>
-          <h1 className={styles.heading}>See Soltura OS in your operation.</h1>
+          <span className={styles.label}>Get in Touch</span>
+          <h1 className={styles.heading}>Tell us about your operation.</h1>
           <p className={styles.sub}>
-            Tell Sofia where your inventory process breaks down. She&apos;ll walk you through exactly how Soltura OS addresses it.
+            Sofia will ask you a few questions to understand your needs. If it&apos;s a fit, we&apos;ll follow up directly.
           </p>
           <div className={styles.details}>
             <div className={styles.detail}>
               <span className={styles.detailIcon}>◎</span>
               <div>
-                <strong>30 minutes</strong>
-                <span>Focused on your specific operation</span>
+                <strong>No pitch</strong>
+                <span>We understand your operation first</span>
               </div>
             </div>
             <div className={styles.detail}>
               <span className={styles.detailIcon}>◈</span>
               <div>
-                <strong>Live product walkthrough</strong>
-                <span>See Soltura OS on real inventory scenarios</span>
+                <strong>1 business day</strong>
+                <span>Response time from our team</span>
               </div>
             </div>
             <div className={styles.detail}>
               <span className={styles.detailIcon}>◉</span>
               <div>
-                <strong>Same-day follow-up</strong>
-                <span>We respond within 24 hours</span>
+                <strong>Real follow-up</strong>
+                <span>A person on our team, not an automation</span>
               </div>
             </div>
           </div>
@@ -186,9 +186,9 @@ export default function ContactPage() {
             <div className={styles.nextSteps}>
               <h3>What happens next</h3>
               <ol>
-                <li>Sofia shares your situation with our product team</li>
-                <li>We prepare a demo tailored to your inventory setup</li>
-                <li>A product specialist reaches out within 24 hours to confirm timing</li>
+                <li>Sofia passes your summary to our team</li>
+                <li>Someone reviews your situation — not a bot, a person</li>
+                <li>We follow up within 1 business day if it looks like a fit</li>
               </ol>
               <p>You can also reach us directly at <a href="mailto:hello@soltura.ai">hello@soltura.ai</a></p>
             </div>
