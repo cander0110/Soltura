@@ -48,24 +48,24 @@ const osFeatures = [
 
 const team = [
   {
-    name: 'Liam Cox',
+    name: 'James Whitfield',
     role: 'CEO & CIO',
-    bio: 'Technology leadership and product vision. Liam drives the strategic direction of Soltura\'s platform and oversees all engineering decisions.',
+    bio: 'Technology leadership and product vision. James drives the strategic direction of Soltura\'s platform and oversees all engineering decisions.',
   },
   {
-    name: 'Connor Anderson',
+    name: 'Daniel Marsh',
     role: 'CFO',
-    bio: 'Financial strategy and operations. Connor manages Soltura\'s financial infrastructure and brings an accounting and business background to every engagement.',
+    bio: 'Financial strategy and operations. Daniel manages Soltura\'s financial infrastructure and brings an accounting and business background to every engagement.',
   },
   {
-    name: 'Chris Mudd',
+    name: 'Ryan Calloway',
     role: 'CTO',
-    bio: 'Systems architecture and software development. Chris leads the technical build of Soltura OS and all client-facing integrations.',
+    bio: 'Systems architecture and software development. Ryan leads the technical build of Soltura OS and all client-facing integrations.',
   },
   {
-    name: 'Joe Perzanowski',
+    name: 'Marcus Teller',
     role: 'COO',
-    bio: 'Operations and product development. Joe brings direct dispensary management experience and drives the operational requirements behind Soltura OS.',
+    bio: 'Operations and product development. Marcus brings direct dispensary management experience and drives the operational requirements behind Soltura OS.',
   },
 ]
 
