@@ -5,13 +5,12 @@
   right: 0;
   z-index: 100;
   height: var(--nav-height);
-  background: transparent;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  background: var(--sol-white);
+  border-bottom: 1px solid var(--sol-light);
+  transition: box-shadow var(--transition-base);
 }
 
 .nav.scrolled {
-  background: rgba(248, 247, 245, 0.95);
-  backdrop-filter: blur(12px);
   box-shadow: var(--shadow-sm);
 }
 
@@ -25,9 +24,9 @@
 .logo {
   font-family: var(--font-serif);
   font-size: 1.5rem;
-  color: var(--color-slate);
+  color: var(--sol-dark);
   letter-spacing: -0.01em;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .links {
@@ -38,31 +37,34 @@
 
 .link {
   font-size: 0.9375rem;
-  font-weight: 400;
-  color: var(--color-text-secondary);
-  transition: color var(--transition);
+  font-weight: 500;
+  color: var(--sol-dark);
   letter-spacing: 0.01em;
+  text-decoration: none;
+  text-underline-offset: 4px;
+  transition: text-decoration-color var(--transition-base);
 }
 
 .link:hover {
-  color: var(--color-slate);
+  text-decoration: underline;
+  text-decoration-color: var(--sol-gold);
 }
 
 .cta {
   display: inline-flex;
   align-items: center;
-  background: var(--color-slate);
-  color: var(--color-white);
+  background: var(--sol-blue);
+  color: var(--sol-white);
   padding: var(--space-2) var(--space-5);
-  border-radius: var(--radius-md);
+  border-radius: 2px;
   font-size: 0.875rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  transition: background var(--transition);
+  transition: background var(--transition-base);
 }
 
 .cta:hover {
-  background: var(--color-slate-light);
+  background: var(--sol-dark);
 }
 
 .hamburger {
@@ -80,7 +82,7 @@
   display: block;
   width: 22px;
   height: 2px;
-  background: var(--color-slate);
+  background: var(--sol-dark);
   transition: all 0.25s ease;
   border-radius: 2px;
 }
@@ -108,12 +110,12 @@
     top: var(--nav-height);
     left: 0;
     right: 0;
-    background: var(--color-canvas);
+    background: var(--sol-white);
     padding: var(--space-6);
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-4);
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid var(--sol-light);
     box-shadow: var(--shadow-md);
   }
 

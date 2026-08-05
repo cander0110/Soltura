@@ -1,18 +1,38 @@
 import Link from 'next/link'
 import styles from './page.module.css'
 
-const services = [
+const tiles = [
   {
-    title: 'AI-Powered Software',
-    body: 'We design and build intelligent systems that surface the information your team needs — when they need it. From real-time monitoring to automated alerts, our software works within your existing infrastructure, not around it.',
+    label: 'Inventory Intelligence',
+    sentence: 'Real-time visibility into the stock events your POS captures but doesn\'t surface.',
+    href: '#soltura-os',
+    icon: (
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
+        <path d="M4 20V10M12 20V4M20 20V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
   },
   {
-    title: 'Dutchie Integration & Optimization',
-    body: 'We extend what Dutchie already does. Our solutions connect directly to your existing instance, adding visibility, automation, and control that the platform doesn\'t offer out of the box.',
+    label: 'Compliance Automation',
+    sentence: 'Automated flagging of adjustment errors, movement anomalies, and audit risks.',
+    href: '#soltura-os',
+    icon: (
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
+        <path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
   },
   {
-    title: 'Strategic Technology Consulting',
-    body: 'Not every problem needs a new system. Sometimes it needs a clearer view of the one you already have. We work with operations teams to identify gaps, build solutions, and improve how people and technology work together.',
+    label: 'Dutchie Integration',
+    sentence: 'We extend what Dutchie already does — without disrupting what\'s already working.',
+    href: '#soltura-os',
+    icon: (
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
+        <path d="M9 3v4M15 3v4M7 7h10v3a5 5 0 01-10 0V7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 15v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+    ),
   },
 ]
 
@@ -33,40 +53,24 @@ const howWeDoIt = [
 
 const osFeatures = [
   {
-    title: 'Real-time transaction monitoring',
-    body: 'Catch large transactions, suspicious activity, and return errors as they happen — not at the end of a shift.',
+    title: 'Sales floor monitoring',
+    body: 'Know the moment inventory hits zero and backstock is available.',
   },
   {
-    title: 'Automated restock notifications',
-    body: 'Know the moment a sales floor product hits zero and backstock is available to fill it. No more silent stockouts.',
+    title: 'Transaction anomaly detection',
+    body: 'Flag large sales, suspicious activity, and return errors in real time.',
   },
   {
-    title: 'Intelligent compliance flagging',
-    body: 'Automatically surface missing adjustment comments, package movement errors, and negative inventory events before they compound.',
+    title: 'Compliance audit support',
+    body: 'Surface adjustment errors and package movement issues before they compound.',
   },
 ]
 
 const team = [
-  {
-    name: 'James Whitfield',
-    role: 'CEO & CIO',
-    bio: 'Technology leadership and product vision. James drives the strategic direction of Soltura\'s platform and oversees all engineering decisions.',
-  },
-  {
-    name: 'Daniel Marsh',
-    role: 'CFO',
-    bio: 'Financial strategy and operations. Daniel manages Soltura\'s financial infrastructure and brings an accounting and business background to every engagement.',
-  },
-  {
-    name: 'Ryan Calloway',
-    role: 'CTO',
-    bio: 'Systems architecture and software development. Ryan leads the technical build of Soltura OS and all client-facing integrations.',
-  },
-  {
-    name: 'Marcus Teller',
-    role: 'COO',
-    bio: 'Operations and product development. Marcus brings direct dispensary management experience and drives the operational requirements behind Soltura OS.',
-  },
+  { name: 'Liam Cox', role: 'CEO & CIO' },
+  { name: 'Connor Anderson', role: 'CFO' },
+  { name: 'Chris Mudd', role: 'CTO' },
+  { name: 'Joe Perzanowski', role: 'COO' },
 ]
 
 export default function HomePage() {
@@ -74,26 +78,21 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className={styles.hero}>
-        <div className={`container ${styles.heroInner}`}>
-          <div className={styles.heroContent}>
-            <span className={styles.eyebrow}>AI Solutions & Technology Consulting</span>
-            <h1 className={styles.heroHeadline}>
-              We build the tools that make your operations run smarter.
-            </h1>
-            <p className={styles.heroSub}>
-              Soltura delivers AI-powered software and strategic consulting for businesses ready to move beyond manual processes. Our first product, Soltura OS, is already changing how dispensaries manage inventory, compliance, and operations.
-            </p>
-            <div className={styles.heroCtas}>
-              <Link href="/soltura-os" className="btn-primary">See Soltura OS →</Link>
-              <Link href="/demo" className="btn-secondary">Get in Touch</Link>
-            </div>
-          </div>
-          <div className={styles.heroImageWrap}>
-            {/* Photo placeholder — replace with team/location image after shoot */}
-            <div className={styles.heroImagePlaceholder} aria-hidden="true">
-              <span>Team photo coming soon</span>
-            </div>
-          </div>
+        <div className={styles.heroContent}>
+          <span className={styles.eyebrow}>AI Solutions & Technology Consulting</span>
+          <h1 className={styles.heroHeadline}>
+            We build what your operation is missing.
+          </h1>
+          <p className={styles.heroSub}>
+            Soltura OS gives dispensaries the inventory intelligence Dutchie doesn&apos;t.
+          </p>
+          <Link href="/soltura-os" className={styles.heroCta}>
+            See what we&apos;ve built <span className={styles.heroCtaArrow}>→</span>
+          </Link>
+        </div>
+        <div className={styles.heroImageWrap}>
+          {/* Replace gradient with real team photo — outdoor, natural light, aspect ratio ~3:2 */}
+          <div className={styles.heroImagePlaceholder} aria-hidden="true" />
         </div>
       </section>
 
@@ -101,30 +100,23 @@ export default function HomePage() {
       <section id="about" className={styles.about}>
         <div className="container">
           <div className={styles.aboutInner}>
-            <div className={styles.aboutLeft}>
-              <span className={styles.label}>About Soltura</span>
-              <h2 className={styles.sectionTitle}>A specialized team. A clear focus.</h2>
-            </div>
-            <div className={styles.aboutRight}>
-              <p className={styles.aboutBody}>
-                We are a technology consulting firm and software development company built on one belief: AI should solve real operational problems, not add complexity. Soltura was founded by four professionals with backgrounds spanning dispensary operations, software engineering, financial systems, and technology leadership.
-              </p>
-              <p className={styles.aboutBody}>
-                We partner with businesses to identify where intelligent automation and data visibility create the most value — then we build it.
-              </p>
-              <div className={styles.stats}>
-                <div className={styles.stat}>
-                  <span className={styles.statNum}>15+</span>
-                  <span className={styles.statLabel}>Years of combined dispensary operations experience</span>
-                </div>
-                <div className={styles.stat}>
-                  <span className={styles.statNum}>4</span>
-                  <span className={styles.statLabel}>Founders with hands-on industry and technology backgrounds</span>
-                </div>
-                <div className={styles.stat}>
-                  <span className={styles.statNum}>1</span>
-                  <span className={styles.statLabel}>Focused product built for the problems that matter most right now</span>
-                </div>
+            <span className={styles.aboutEyebrow}>About Soltura</span>
+            <h2 className={styles.aboutHeadline}>Built by people who&apos;ve been in the room.</h2>
+            <p className={styles.aboutBody}>
+              Soltura was founded by four professionals with backgrounds in dispensary operations, software engineering, financial strategy, and technology leadership. We understand the problem before we build the solution.
+            </p>
+            <div className={styles.stats}>
+              <div className={styles.stat}>
+                <span className={styles.statNum}>15+</span>
+                <span className={styles.statLabel}>Years combined dispensary experience</span>
+              </div>
+              <div className={styles.stat}>
+                <span className={styles.statNum}>4</span>
+                <span className={styles.statLabel}>Founders</span>
+              </div>
+              <div className={styles.stat}>
+                <span className={styles.statNum}>1</span>
+                <span className={styles.statLabel}>Focused product</span>
               </div>
             </div>
           </div>
@@ -132,17 +124,22 @@ export default function HomePage() {
       </section>
 
       {/* What We Do */}
-      <section id="what-we-do" className={styles.services}>
+      <section id="what-we-do" className={styles.whatWeDo}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <span className={styles.label}>What We Do</span>
-            <h2 className={styles.sectionTitle}>Broad capability. Specific results.</h2>
+            <span className={styles.whatWeDoEyebrow}>What We Do</span>
+            <h2 className={styles.whatWeDoHeadline}>What can we build together?</h2>
+            <p className={styles.whatWeDoSub}>
+              We solve operational problems with AI-powered software and strategic consulting.
+            </p>
           </div>
-          <div className={styles.servicesGrid}>
-            {services.map((s) => (
-              <div key={s.title} className={styles.serviceCard}>
-                <h3 className={styles.serviceTitle}>{s.title}</h3>
-                <p className={styles.serviceBody}>{s.body}</p>
+          <div className={styles.tileGrid}>
+            {tiles.map((tile) => (
+              <div key={tile.label} className={styles.tile}>
+                <div className={styles.tileIcon}>{tile.icon}</div>
+                <h3 className={styles.tileLabel}>{tile.label}</h3>
+                <p className={styles.tileSentence}>{tile.sentence}</p>
+                <Link href={tile.href} className={styles.tileLink}>Learn more →</Link>
               </div>
             ))}
           </div>
@@ -172,30 +169,42 @@ export default function HomePage() {
 
       {/* Soltura OS */}
       <section id="soltura-os" className={styles.product}>
-        <div className="container">
-          <div className={styles.productHeader}>
-            <span className={styles.label}>Our Product</span>
-            <h2 className={styles.sectionTitle}>Soltura OS — Inventory Intelligence for Dutchie-Based Dispensaries</h2>
-            <p className={styles.productSub}>Built for how dispensaries actually operate.</p>
+        <div className={styles.productContent}>
+          <span className={styles.productEyebrow}>Our Product</span>
+          <h2 className={styles.productHeadline}>Soltura OS</h2>
+          <p className={styles.productSubheadline}>Inventory intelligence for Dutchie-based dispensaries.</p>
+          <p className={styles.productBody}>
+            Soltura OS integrates directly with your existing Dutchie instance — adding real-time monitoring, automated alerts, and compliance flagging without changing your current workflow.
+          </p>
+          <div className={styles.productFeatures}>
+            {osFeatures.map((f) => (
+              <div key={f.title} className={styles.featureRow}>
+                <h3 className={styles.featureTitle}>{f.title}</h3>
+                <p className={styles.featureBody}>{f.body}</p>
+              </div>
+            ))}
           </div>
-          <div className={styles.productInner}>
-            <div className={styles.productBody}>
-              <p>
-                Soltura OS integrates directly with your existing Dutchie instance, extending its capabilities without disrupting your current workflow. Your team gets real-time visibility into the inventory events that matter most — so they can focus on what they do best.
-              </p>
+          <Link href="/demo" className={styles.productCta}>Request a Demo</Link>
+        </div>
+        <div className={styles.productVisual}>
+          {/* Replace with real dashboard screenshot */}
+          <div className={styles.dashboardMock} aria-hidden="true">
+            <span className={styles.dashboardLabel}>Soltura OS — Live Feed</span>
+            <div className={styles.dashboardRow}>
+              <span className={`${styles.dashboardDot} ${styles.dashboardDotGold}`} />
+              <span className={styles.dashboardText}>Restock alert — Sales Floor A</span>
+              <span className={styles.dashboardTime}>2m ago</span>
             </div>
-            <div className={styles.productFeatures}>
-              {osFeatures.map((f) => (
-                <div key={f.title} className={styles.featureRow}>
-                  <h3 className={styles.featureTitle}>{f.title}</h3>
-                  <p className={styles.featureBody}>{f.body}</p>
-                </div>
-              ))}
+            <div className={styles.dashboardRow}>
+              <span className={`${styles.dashboardDot} ${styles.dashboardDotGreen}`} />
+              <span className={styles.dashboardText}>Transaction reconciled</span>
+              <span className={styles.dashboardTime}>14m ago</span>
             </div>
-          </div>
-          <div className={styles.productCta}>
-            <p>Ready to see what Soltura OS can do for your operation?</p>
-            <Link href="/demo" className="btn-primary">Request a Demo →</Link>
+            <div className={styles.dashboardRow}>
+              <span className={`${styles.dashboardDot} ${styles.dashboardDotGold}`} />
+              <span className={styles.dashboardText}>Adjustment flagged for review</span>
+              <span className={styles.dashboardTime}>26m ago</span>
+            </div>
           </div>
         </div>
       </section>
@@ -204,16 +213,13 @@ export default function HomePage() {
       <section id="team" className={styles.team}>
         <div className="container">
           <div className={styles.teamHeader}>
-            <span className={styles.label}>The Team</span>
-            <h2 className={styles.sectionTitle}>Built by people who&apos;ve been in the room.</h2>
-            <p className={styles.teamSub}>
-              Our founders bring a mix of dispensary operations, software engineering, financial strategy, and technology leadership — which means we understand the problem before we build the solution.
-            </p>
+            <span className={styles.teamEyebrow}>The Team</span>
+            <h2 className={styles.teamHeadline}>The people behind the product.</h2>
           </div>
           <div className={styles.teamGrid}>
             {team.map((member) => (
               <div key={member.name} className={styles.teamCard}>
-                {/* Photo placeholder — replace with headshot after team shoot */}
+                {/* Replace with real headshot — outdoor, natural light */}
                 <div className={styles.teamPhoto} aria-hidden="true">
                   <span className={styles.teamInitials}>
                     {member.name.split(' ').map(n => n[0]).join('')}
@@ -221,7 +227,6 @@ export default function HomePage() {
                 </div>
                 <h3 className={styles.teamName}>{member.name}</h3>
                 <p className={styles.teamRole}>{member.role}</p>
-                <p className={styles.teamBio}>{member.bio}</p>
               </div>
             ))}
           </div>
@@ -230,16 +235,14 @@ export default function HomePage() {
 
       {/* Bottom CTA */}
       <section className={styles.cta}>
-        <div className="container">
-          <div className={styles.ctaInner}>
-            <h2 className={styles.ctaTitle}>Let&apos;s talk about what&apos;s possible for your operation.</h2>
-            <p className={styles.ctaBody}>
-              Whether you&apos;re running a single dispensary or a multi-location group, we&apos;d like to understand your operation before we tell you what we can do for it.
-            </p>
-            <div className={styles.ctaButtons}>
-              <Link href="/demo" className="btn-ghost">Start the Conversation →</Link>
-              <a href="mailto:hello@soltura.ai" className={styles.ctaEmail}>hello@soltura.ai</a>
-            </div>
+        <div className={styles.ctaInner}>
+          <h2 className={styles.ctaTitle}>Let&apos;s talk about what your operation needs.</h2>
+          <p className={styles.ctaBody}>
+            We&apos;d rather understand your operation before we tell you what we can do for it.
+          </p>
+          <div className={styles.ctaButtons}>
+            <Link href="/demo" className={styles.ctaPrimary}>Start the Conversation</Link>
+            <a href="mailto:hello@soltura.ai" className={styles.ctaEmail}>or email us directly</a>
           </div>
         </div>
       </section>

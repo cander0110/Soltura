@@ -8,6 +8,12 @@ interface Message {
   content: string
 }
 
+const trustSignals = [
+  'Currently piloting with Maryland dispensaries',
+  'Dutchie-native — no workflow disruption',
+  'Detect-only — we never write to your system',
+]
+
 type Stage = 'qualifying' | 'final' | 'done'
 
 const WELCOME_MESSAGE = "Hi there. I'm Sofia, an intake specialist at Soltura. Tell me a bit about your operation — what's the core problem you're trying to solve right now?"
@@ -118,33 +124,18 @@ export default function ContactPage() {
     <div className={styles.page}>
       <div className={styles.sidebar}>
         <div className={styles.sidebarContent}>
-          <span className={styles.label}>Get in Touch</span>
+          <span className={styles.label}>Request a Demo</span>
           <h1 className={styles.heading}>Tell us about your operation.</h1>
           <p className={styles.sub}>
-            Sofia will ask you a few questions to understand your needs. If it&apos;s a fit, we&apos;ll follow up directly.
+            Sofia will ask you a few questions. If it&apos;s a good fit, someone from our team will be in touch within one business day.
           </p>
-          <div className={styles.details}>
-            <div className={styles.detail}>
-              <span className={styles.detailIcon}>◎</span>
-              <div>
-                <strong>No pitch</strong>
-                <span>We understand your operation first</span>
+          <div className={styles.trustSignals}>
+            {trustSignals.map((signal) => (
+              <div key={signal} className={styles.trustSignal}>
+                <span className={styles.trustDash}>—</span>
+                <span>{signal}</span>
               </div>
-            </div>
-            <div className={styles.detail}>
-              <span className={styles.detailIcon}>◈</span>
-              <div>
-                <strong>1 business day</strong>
-                <span>Response time from our team</span>
-              </div>
-            </div>
-            <div className={styles.detail}>
-              <span className={styles.detailIcon}>◉</span>
-              <div>
-                <strong>Real follow-up</strong>
-                <span>A person on our team, not an automation</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
