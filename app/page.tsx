@@ -68,9 +68,9 @@ const tiles = [
 ]
 
 const osFeatures = [
-  { label: 'Sales floor monitoring', href: '/soltura-os' },
-  { label: 'Transaction anomaly detection', href: '/soltura-os' },
-  { label: 'Compliance audit support', href: '/soltura-os' },
+  { label: 'Sales floor monitoring' },
+  { label: 'Transaction anomaly detection' },
+  { label: 'Compliance audit support' },
 ]
 
 const liveFeed = [
@@ -183,9 +183,9 @@ export default function HomePage() {
           <p className={styles.productBody}>
             Integrates directly with your Dutchie instance. No workflow changes. No write access to your system.
           </p>
-          <div className={styles.featureLinks}>
+          <div className={styles.featureList}>
             {osFeatures.map((f) => (
-              <Link key={f.label} href={f.href} className={styles.featureLink}>{f.label}</Link>
+              <span key={f.label} className={styles.featureItem}>{f.label}</span>
             ))}
           </div>
           <Link href="/demo" className={styles.productCta}>Request a Demo</Link>
