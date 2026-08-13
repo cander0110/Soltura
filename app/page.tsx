@@ -7,7 +7,6 @@ const tiles = [
   {
     label: 'Inventory Intelligence',
     sentence: 'Real-time visibility into the stock events your POS captures but doesn\'t surface.',
-    href: '#soltura-os',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <rect x="3" y="12" width="4" height="9" rx="0.5" />
@@ -19,7 +18,6 @@ const tiles = [
   {
     label: 'Compliance Automation',
     sentence: 'Automated flagging of adjustment errors, movement anomalies, and audit risks.',
-    href: '#soltura-os',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <path d="M12 2L4 5v6c0 5 3.5 9.74 8 11 4.5-1.26 8-6 8-11V5L12 2z" />
@@ -30,7 +28,6 @@ const tiles = [
   {
     label: 'Dutchie Integration',
     sentence: 'We extend what Dutchie already does — without disrupting what\'s already working.',
-    href: '#soltura-os',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <path d="M18 6L6 18M8 6v4M16 14v4M5 9h4M15 15h4" />
@@ -40,7 +37,6 @@ const tiles = [
   {
     label: 'Audit record accuracy',
     sentence: 'Errors flagged before they become compliance problems.',
-    href: '#soltura-os',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <rect x="6" y="4" width="12" height="17" rx="1.5" />
@@ -52,7 +48,6 @@ const tiles = [
   {
     label: 'Automated inventory intelligence',
     sentence: 'Real-time alerts when stock, packages, or returns need attention.',
-    href: '#soltura-os',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <path d="M6 10a6 6 0 0112 0c0 4 1.5 5.5 1.5 5.5H4.5S6 14 6 10z" />
@@ -63,7 +58,6 @@ const tiles = [
   {
     label: 'Operational data visibility',
     sentence: 'Surface what your POS captures but never shows you.',
-    href: '#soltura-os',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
@@ -174,10 +168,12 @@ export default function HomePage() {
                 <div className={styles.tileIcon}>{tile.icon}</div>
                 <h3 className={styles.tileLabel}>{tile.label}</h3>
                 <p className={styles.tileSentence}>{tile.sentence}</p>
-                <Link href={tile.href} className={styles.tileLink}>Learn more</Link>
               </div>
             ))}
           </div>
+          <p className={styles.tileCta}>
+            Want to see how we do it? → <Link href="/demo" className={styles.tileCtaLink}>Request a Demo</Link>
+          </p>
         </div>
       </section>
 
