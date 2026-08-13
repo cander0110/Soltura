@@ -1,5 +1,6 @@
 .page {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-top: var(--nav-height);
@@ -339,6 +340,9 @@
 @media (max-width: 900px) {
   .page {
     grid-template-columns: 1fr;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
   }
 
   .sidebar {
