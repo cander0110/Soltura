@@ -82,6 +82,12 @@ const osFeatures = [
   { label: 'Compliance audit support', href: '/soltura-os' },
 ]
 
+const liveFeed = [
+  { color: 'gold', text: 'Restock alert — Sales Floor A', time: '2m ago' },
+  { color: 'green', text: 'Transaction reconciled', time: '14m ago' },
+  { color: 'gold', text: 'Adjustment flagged for review', time: '26m ago' },
+]
+
 const timelineStats = [
   { label: 'Units sold', value: '9', color: '#22c55e' },
   { label: 'Remove events', value: '5', color: 'var(--tl-critical)' },
@@ -90,12 +96,12 @@ const timelineStats = [
 ]
 
 const timelineRows = [
-  { time: '9:44 AM', badge: 'info', label: 'INFO', employee: 'Christian P.', cross: false, register: 'Register 24', receipt: '3441821' },
-  { time: '9:52 AM', badge: 'warn', label: 'WARN', employee: 'Sadiya C. +Samuel P.', cross: true, register: 'Register 26', receipt: '3441767' },
-  { time: '9:56 AM', badge: 'critical', label: 'CRITICAL', employee: 'Kaitlyn F. → Justin C.', cross: true, register: 'Register 28', receipt: '3441825' },
-  { time: '12:11 PM', badge: 'info', label: 'INFO', employee: 'Joseph G.', cross: false, register: 'Register 11', receipt: '3442031', gapAfter: true },
-  { time: '2:02 PM', badge: 'critical', label: 'REMOVE', employee: 'Anthony Davis', cross: true, register: 'Register 11', receipt: '3442031' },
-  { time: '7:36 PM', badge: 'critical', label: 'REMOVE', employee: 'Samuel P.', cross: false, register: 'Register 26', receipt: '3441767' },
+  { time: '9:44 AM', badge: 'info', label: 'INFO', employee: 'Employee A', cross: false, register: 'Register 1', receipt: '0000001' },
+  { time: '9:52 AM', badge: 'warn', label: 'WARN', employee: 'Employee B +Employee C', cross: true, register: 'Register 2', receipt: '0000002' },
+  { time: '9:56 AM', badge: 'critical', label: 'CRITICAL', employee: 'Employee D → Employee E', cross: true, register: 'Register 3', receipt: '0000003' },
+  { time: '12:11 PM', badge: 'info', label: 'INFO', employee: 'Employee F', cross: false, register: 'Register 4', receipt: '0000004', gapAfter: true },
+  { time: '2:02 PM', badge: 'critical', label: 'REMOVE', employee: 'Employee G', cross: true, register: 'Register 4', receipt: '0000004' },
+  { time: '7:36 PM', badge: 'critical', label: 'REMOVE', employee: 'Employee C', cross: false, register: 'Register 2', receipt: '0000002' },
 ]
 
 const team = [
@@ -215,70 +221,85 @@ export default function HomePage() {
           <Link href="/demo" className={styles.productCta}>Request a Demo</Link>
         </div>
         <div className={styles.productVisual}>
-          <div className={styles.browserFrame}>
-            <div className={styles.browserFrameBar}>
-              <span className={`${styles.trafficDot} ${styles.trafficRed}`} />
-              <span className={`${styles.trafficDot} ${styles.trafficYellow}`} />
-              <span className={`${styles.trafficDot} ${styles.trafficGreen}`} />
-            </div>
-            <div className={styles.timelineWrap}>
-              <div className="sol-tl">
-                <div className="sol-tl-topbar">
-                  <span className="sol-tl-topbar-left">PACKAGE INVESTIGATION</span>
-                  <span className="sol-tl-topbar-right">Gold Leaf MD · License DA-23-00084</span>
-                </div>
-
-                <div className="sol-tl-pkg-header">
-                  <div className="sol-tl-pkg-name">Curio | Everyday — Gush Mints Pre Pack 3.5g</div>
-                  <div className="sol-tl-pkg-id">1A40303...68582 · May 23, 2026</div>
-                  <div className="sol-tl-stats">
-                    {timelineStats.map((s) => (
-                      <div className="sol-tl-stat" key={s.label}>
-                        <div className="sol-tl-stat-label">{s.label}</div>
-                        <div className="sol-tl-stat-value" style={{ color: s.color }}>{s.value}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="sol-tl-summary">
-                  <span className="sol-tl-summary-badge">AI</span>
-                  <span className="sol-tl-summary-text">
-                    17 cart events across 8 employees. Receipt 3442031 — item held 111 min before removal. 3 cross-employee removes flagged.
-                  </span>
-                </div>
-
-                <div className="sol-tl-columns">
-                  <span className="sol-tl-col-head">TIME</span>
-                  <span className="sol-tl-col-head">ACTION</span>
-                  <span className="sol-tl-col-head">EMPLOYEE</span>
-                  <span className="sol-tl-col-head">REGISTER</span>
-                  <span className="sol-tl-col-head">RECEIPT</span>
-                </div>
-
-                {timelineRows.map((row, i) => (
-                  <Fragment key={i}>
-                    <div className={`sol-tl-row${row.badge === 'critical' ? ' sol-tl-row-critical' : row.badge === 'warn' ? ' sol-tl-row-warn' : ''}`}>
-                      <span className="sol-tl-time">{row.time}</span>
-                      <span className={`sol-tl-badge sol-tl-badge-${row.badge}`}>{row.label}</span>
-                      <span className="sol-tl-employee">
-                        {row.employee}
-                        {row.cross && <span className="sol-tl-cross">CROSS-EMP</span>}
-                      </span>
-                      <span className="sol-tl-register">{row.register}</span>
-                      <span className="sol-tl-receipt">{row.receipt}</span>
-                    </div>
-                    {row.gapAfter && (
-                      <div className="sol-tl-gap">
-                        <span className="sol-tl-gap-line" />
-                        <span>⚠ 111 min gap — item in open cart</span>
-                        <span className="sol-tl-gap-line" />
-                      </div>
-                    )}
-                  </Fragment>
-                ))}
+          <div className={styles.dashboardMock}>
+            <span className={styles.dashboardLabel}>Soltura OS — Live Feed</span>
+            {liveFeed.map((item) => (
+              <div className={styles.dashboardRow} key={item.text}>
+                <span className={`${styles.dashboardDot} ${item.color === 'green' ? styles.dashboardDotGreen : styles.dashboardDotGold}`} />
+                <span className={styles.dashboardText}>{item.text}</span>
+                <span className={styles.dashboardTime}>{item.time}</span>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* See It In Action — investigation timeline */}
+      <section className={styles.timelineSection}>
+        <div className={styles.timelineHeader}>
+          <span className={styles.timelineEyebrow}>See It In Action</span>
+          <h2 className={styles.timelineHeadline}>Every event. Every employee. Every second.</h2>
+          <p className={styles.timelineSubline}>
+            Soltura OS surfaces the full transaction history behind any inventory discrepancy — so investigations take minutes, not hours.
+          </p>
+        </div>
+
+        <div className="sol-tl">
+          <div className="sol-tl-topbar">
+            <span className="sol-tl-topbar-left">PACKAGE INVESTIGATION</span>
+            <span className="sol-tl-topbar-right">Greenway Dispensary · License MD-00-00000</span>
+          </div>
+
+          <div className="sol-tl-pkg-header">
+            <div className="sol-tl-pkg-name">Example Brand | Pre Pack — 3.5g Flower</div>
+            <div className="sol-tl-pkg-id">1A000000000000X000000000 · August 2026</div>
+            <div className="sol-tl-stats">
+              {timelineStats.map((s) => (
+                <div className="sol-tl-stat" key={s.label}>
+                  <div className="sol-tl-stat-label">{s.label}</div>
+                  <div className="sol-tl-stat-value" style={{ color: s.color }}>{s.value}</div>
+                </div>
+              ))}
             </div>
+          </div>
+
+          <div className="sol-tl-summary">
+            <span className="sol-tl-summary-badge">AI</span>
+            <span className="sol-tl-summary-text">
+              17 cart events across 8 employees. Receipt #0000031 — item held 111 min before removal. 3 cross-employee removes flagged.
+            </span>
+          </div>
+
+          <div className="sol-tl-table">
+            <div className="sol-tl-columns">
+              <span className="sol-tl-col-head">TIME</span>
+              <span className="sol-tl-col-head">ACTION</span>
+              <span className="sol-tl-col-head">EMPLOYEE</span>
+              <span className="sol-tl-col-head">REGISTER</span>
+              <span className="sol-tl-col-head">RECEIPT</span>
+            </div>
+
+            {timelineRows.map((row, i) => (
+              <Fragment key={i}>
+                <div className={`sol-tl-row${row.badge === 'critical' ? ' sol-tl-row-critical' : row.badge === 'warn' ? ' sol-tl-row-warn' : ''}`}>
+                  <span className="sol-tl-time">{row.time}</span>
+                  <span className={`sol-tl-badge sol-tl-badge-${row.badge}`}>{row.label}</span>
+                  <span className="sol-tl-employee">
+                    {row.employee}
+                    {row.cross && <span className="sol-tl-cross">CROSS-EMP</span>}
+                  </span>
+                  <span className="sol-tl-register">{row.register}</span>
+                  <span className="sol-tl-receipt">{row.receipt}</span>
+                </div>
+                {row.gapAfter && (
+                  <div className="sol-tl-gap">
+                    <span className="sol-tl-gap-line" />
+                    <span>⚠ 111 min gap — item in open cart</span>
+                    <span className="sol-tl-gap-line" />
+                  </div>
+                )}
+              </Fragment>
+            ))}
           </div>
         </div>
       </section>

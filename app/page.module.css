@@ -432,56 +432,105 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10%;
+  padding: 15%;
 }
 
-.browserFrame {
-  width: 90%;
-  margin: auto;
-  background: #0D1B2A;
+.dashboardMock {
+  width: 100%;
+  background: var(--sol-dark);
   border-radius: 8px;
+  padding: 1.5rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
   transition: transform 0.4s ease;
 }
 
-.browserFrame:hover {
+.dashboardMock:hover {
   transform: translateY(-4px);
 }
 
-.browserFrameBar {
-  height: 36px;
-  background: #1A2332;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding-left: 12px;
+.dashboardLabel {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sol-gray);
+  margin-bottom: var(--space-5);
 }
 
-.trafficDot {
-  width: 12px;
-  height: 12px;
+.dashboardRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.dashboardRow:first-of-type {
+  border-top: none;
+}
+
+.dashboardDot {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
-.trafficRed {
-  background: #FF5F57;
+.dashboardDotGold {
+  background: var(--sol-gold);
 }
 
-.trafficYellow {
-  background: #FEBC2E;
+.dashboardDotGreen {
+  background: #4CAF50;
 }
 
-.trafficGreen {
-  background: #28C840;
+.dashboardText {
+  flex: 1;
+  font-size: 0.8125rem;
+  color: var(--sol-light);
 }
 
-.timelineWrap {
-  width: 377px;
-  height: 514px;
-  max-width: 100%;
-  overflow: hidden;
+.dashboardTime {
+  font-size: 0.75rem;
+  color: var(--sol-gray);
+  flex-shrink: 0;
+}
+
+/* ── See It In Action (investigation timeline) ──────── */
+.timelineSection {
+  background: #0e0f11;
+}
+
+.timelineHeader {
+  background: #0e0f11;
+  padding: var(--section-padding) var(--container-padding) 2rem;
+}
+
+.timelineEyebrow {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #4ade80;
+  margin-bottom: 1rem;
+}
+
+.timelineHeadline {
+  font-size: var(--text-heading);
+  font-weight: 700;
+  color: #e8e6df;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: var(--space-3);
+}
+
+.timelineSubline {
+  font-size: 0.9375rem;
+  color: #9a9387;
+  line-height: 1.6;
+  max-width: 640px;
 }
 
 /* ── Team ────────────────────────────────────────── */
@@ -671,11 +720,8 @@
     flex-direction: column;
   }
 
-  .productContent {
-    width: 100%;
-  }
-
+  .productContent,
   .productVisual {
-    display: none;
+    width: 100%;
   }
 }

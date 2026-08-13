@@ -197,7 +197,7 @@ input, textarea {
   border-radius: 3px;
 }
 
-/* ── Investigation timeline (Soltura OS proof-of-product mockup) ── */
+/* ── Investigation timeline (Soltura OS proof-of-product) ── */
 .sol-tl {
   --tl-bg: #0e0f11;
   --tl-bg2: #14161a;
@@ -216,11 +216,9 @@ input, textarea {
   --tl-info-bg: rgba(59, 130, 246, 0.08);
   --tl-accent: #4ade80;
 
-  width: 460px;
+  width: 100%;
   background: var(--tl-bg);
   font-family: var(--font-sans);
-  transform: scale(0.82);
-  transform-origin: top left;
 }
 
 .sol-tl-topbar {
@@ -320,7 +318,7 @@ input, textarea {
 
 .sol-tl-columns {
   display: grid;
-  grid-template-columns: 62px 96px 1fr 74px 62px;
+  grid-template-columns: 70px 140px 1fr 90px 80px;
   gap: 10px;
   padding: 4px 14px;
 }
@@ -334,7 +332,7 @@ input, textarea {
 
 .sol-tl-row {
   display: grid;
-  grid-template-columns: 62px 96px 1fr 74px 62px;
+  grid-template-columns: 70px 140px 1fr 90px 80px;
   gap: 10px;
   align-items: center;
   padding: 8px 14px;
@@ -428,4 +426,17 @@ input, textarea {
   flex: 1;
   height: 1px;
   background: var(--tl-warn-border);
+}
+
+@media (max-width: 768px) {
+  .sol-tl-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sol-tl-columns,
+  .sol-tl-row,
+  .sol-tl-gap {
+    min-width: 560px;
+  }
 }
