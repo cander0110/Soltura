@@ -305,9 +305,6 @@ export default function HomePage() {
       <section className={styles.cta}>
         <div className={styles.ctaInner}>
           <h2 className={styles.ctaTitle}>Let us talk about what your operation needs.</h2>
-          <p className={styles.ctaBody}>
-            We would rather understand your operation before we tell you what we can do for it.
-          </p>
           <div className={styles.ctaButtons}>
             <Link href="/demo" className={styles.ctaPrimary}>Start the Conversation</Link>
             <a href="mailto:hello@soltura.ai" className={styles.ctaEmail}>or email us directly</a>

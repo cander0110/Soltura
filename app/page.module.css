@@ -494,14 +494,6 @@
   line-height: 1.2;
 }
 
-.ctaBody {
-  font-size: 1.0625rem;
-  color: var(--sol-light);
-  line-height: 1.75;
-  max-width: 60ch;
-  margin: 1rem auto var(--space-8);
-}
-
 .ctaButtons {
   display: flex;
   flex-direction: column;
