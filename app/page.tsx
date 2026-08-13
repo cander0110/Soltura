@@ -67,12 +67,6 @@ const tiles = [
   },
 ]
 
-const osFeatures = [
-  { label: 'Sales floor monitoring' },
-  { label: 'Transaction anomaly detection' },
-  { label: 'Compliance audit support' },
-]
-
 const liveFeed = [
   { color: 'gold', text: 'Restock alert — Sales Floor A', time: '2m ago' },
   { color: 'green', text: 'Transaction reconciled', time: '14m ago' },
@@ -176,12 +170,6 @@ export default function HomePage() {
         <div className={styles.productContent}>
           <span className="eyebrow">Our Product</span>
           <h2 className={styles.productHeadline}>Soltura OS</h2>
-          <p className={styles.productSubheadline}>Inventory intelligence for Dutchie-based dispensaries.</p>
-          <div className={styles.featureList}>
-            {osFeatures.map((f) => (
-              <span key={f.label} className={styles.featureItem}>{f.label}</span>
-            ))}
-          </div>
           <Link href="/demo" className={styles.productCta}>Request a Demo</Link>
         </div>
         <div className={styles.productVisual}>

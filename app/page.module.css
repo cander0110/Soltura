@@ -241,33 +241,6 @@
   margin-bottom: var(--space-3);
 }
 
-.productSubheadline {
-  font-size: var(--text-subheading);
-  color: var(--sol-gold);
-}
-
-.featureList {
-  margin-top: var(--space-10);
-  max-width: 480px;
-}
-
-.featureItem {
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--sol-gold);
-  display: block;
-  margin-bottom: 0.875rem;
-  cursor: default;
-}
-
-.featureItem:last-child {
-  margin-bottom: 0;
-}
-
-.featureItem::before {
-  content: "— ";
-}
-
 .productCta {
   display: inline-block;
   width: fit-content;
