@@ -155,9 +155,6 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <span className="eyebrow">What We Do</span>
             <h2 className={styles.whatWeDoHeadline}>What can we build together?</h2>
-            <p className={styles.whatWeDoSub}>
-              We solve operational problems with AI-powered software and strategic consulting.
-            </p>
           </div>
           <div className={styles.tileGrid}>
             {tiles.map((tile) => (
@@ -180,9 +177,6 @@ export default function HomePage() {
           <span className="eyebrow">Our Product</span>
           <h2 className={styles.productHeadline}>Soltura OS</h2>
           <p className={styles.productSubheadline}>Inventory intelligence for Dutchie-based dispensaries.</p>
-          <p className={styles.productBody}>
-            Integrates directly with your Dutchie instance. No workflow changes. No write access to your system.
-          </p>
           <div className={styles.featureList}>
             {osFeatures.map((f) => (
               <span key={f.label} className={styles.featureItem}>{f.label}</span>

@@ -145,13 +145,6 @@
   margin-bottom: var(--space-4);
 }
 
-.whatWeDoSub {
-  font-size: 1.0625rem;
-  color: var(--sol-gray);
-  line-height: 1.75;
-  max-width: 60ch;
-}
-
 .tileGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -246,14 +239,6 @@
 .productSubheadline {
   font-size: var(--text-subheading);
   color: var(--sol-gold);
-}
-
-.productBody {
-  font-size: var(--text-body);
-  color: var(--sol-light);
-  line-height: 1.75;
-  margin-top: 1.5rem;
-  max-width: 60ch;
 }
 
 .featureList {
