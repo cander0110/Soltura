@@ -6,7 +6,7 @@ import ProductTour from '../components/ProductTour'
 const tiles = [
   {
     label: 'Inventory Intelligence',
-    sentence: 'Know what\'s selling, what\'s stocking out, and what needs attention before your team does.',
+    sentence: 'Know what is selling, what is stocking out, and what needs attention before your team does.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <rect x="3" y="12" width="4" height="9" rx="0.5" />
@@ -27,7 +27,7 @@ const tiles = [
   },
   {
     label: 'Dutchie Integration',
-    sentence: 'We extend what Dutchie already does — without disrupting what\'s already working.',
+    sentence: 'We extend what Dutchie already does — without disrupting what is already working.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <path d="M18 6L6 18M8 6v4M16 14v4M5 9h4M15 15h4" />
@@ -113,10 +113,10 @@ export default function HomePage() {
             We build what your operation is missing.
           </h1>
           <p className={styles.heroSub}>
-            Soltura OS gives dispensaries the inventory intelligence Dutchie doesn&apos;t.
+            Soltura OS gives dispensaries the inventory intelligence Dutchie does not.
           </p>
           <Link href="/soltura-os" className={styles.heroCta}>
-            See what we&apos;ve built <span className={styles.heroCtaArrow}>→</span>
+            See what we have built <span className={styles.heroCtaArrow}>→</span>
           </Link>
         </div>
         <div className={styles.heroImageWrap}>
@@ -130,7 +130,7 @@ export default function HomePage() {
         <div className="container">
           <div className={styles.aboutInner}>
             <span className="eyebrow">About Soltura</span>
-            <h2 className={styles.aboutHeadline}>Built by people who&apos;ve been in the room.</h2>
+            <h2 className={styles.aboutHeadline}>Built by people who have been in the room.</h2>
             <div className={styles.stats}>
               <div className={styles.stat}>
                 <span className={styles.statNum}>15+</span>
@@ -304,9 +304,9 @@ export default function HomePage() {
       {/* Bottom CTA */}
       <section className={styles.cta}>
         <div className={styles.ctaInner}>
-          <h2 className={styles.ctaTitle}>Let&apos;s talk about what your operation needs.</h2>
+          <h2 className={styles.ctaTitle}>Let us talk about what your operation needs.</h2>
           <p className={styles.ctaBody}>
-            We&apos;d rather understand your operation before we tell you what we can do for it.
+            We would rather understand your operation before we tell you what we can do for it.
           </p>
           <div className={styles.ctaButtons}>
             <Link href="/demo" className={styles.ctaPrimary}>Start the Conversation</Link>

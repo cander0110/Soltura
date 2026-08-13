@@ -16,8 +16,8 @@ const trustSignals = [
 
 type Stage = 'qualifying' | 'final' | 'done'
 
-const WELCOME_MESSAGE = "Hi there. I'm Sofia, an intake specialist at Soltura. Tell me a bit about your operation — what's the core problem you're trying to solve right now?"
-const FINAL_PROMPT = "Got it. Anything else you'd like us to know before we follow up?"
+const WELCOME_MESSAGE = "Hi there. I am Sofia, an intake specialist at Soltura. Tell me a bit about your operation — what is the core problem you are trying to solve right now?"
+const FINAL_PROMPT = "Got it. Anything else you would like us to know before we follow up?"
 const CONFIRMATION_MESSAGE = "Thanks — someone from our team will be in touch within 1 business day."
 
 export default function ContactPage() {
@@ -127,7 +127,7 @@ export default function ContactPage() {
           <span className="eyebrow">Request a Demo</span>
           <h1 className={styles.heading}>Tell us about your operation.</h1>
           <p className={styles.sub}>
-            Sofia will ask you a few questions. If it&apos;s a good fit, someone from our team will be in touch within one business day.
+            Sofia will ask you a few questions. If it is a good fit, someone from our team will be in touch within one business day.
           </p>
           <div className={styles.trustSignals}>
             {trustSignals.map((signal) => (
