@@ -203,9 +203,6 @@ export default function HomePage() {
         <div className={styles.timelineHeader}>
           <span className={styles.timelineEyebrow}>See It In Action</span>
           <h2 className={styles.timelineHeadline}>Every event. Every employee. Every second.</h2>
-          <p className={styles.timelineSubline}>
-            Soltura OS surfaces the full transaction history behind any inventory discrepancy — so investigations take minutes, not hours.
-          </p>
         </div>
 
         <div className="sol-tl">

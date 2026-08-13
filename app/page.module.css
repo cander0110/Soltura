@@ -387,12 +387,6 @@
   margin-bottom: var(--space-3);
 }
 
-.timelineSubline {
-  font-size: 0.9375rem;
-  color: #9a9387;
-  line-height: 1.6;
-  max-width: 640px;
-}
 
 /* ── Team ────────────────────────────────────────── */
 .team {
