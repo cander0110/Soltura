@@ -6,7 +6,7 @@ import ProductTour from '../components/ProductTour'
 const tiles = [
   {
     label: 'Inventory Intelligence',
-    sentence: 'Real-time visibility into the stock events your POS captures but doesn\'t surface.',
+    sentence: 'Know what\'s selling, what\'s stocking out, and what needs attention before your team does.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <rect x="3" y="12" width="4" height="9" rx="0.5" />
@@ -57,7 +57,7 @@ const tiles = [
   },
   {
     label: 'Operational data visibility',
-    sentence: 'Surface what your POS captures but never shows you.',
+    sentence: 'Transaction anomalies, shrinkage patterns, and reconciliation gaps — surfaced automatically.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
         <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
