@@ -208,18 +208,6 @@
   margin-bottom: var(--space-5);
 }
 
-.tileCta {
-  margin-top: 3rem;
-  text-align: center;
-  font-size: 0.9375rem;
-  color: var(--sol-gray);
-}
-
-.tileCtaLink {
-  color: var(--sol-blue);
-  font-weight: 600;
-}
-
 /* ── Soltura OS ──────────────────────────────────── */
 .product {
   display: flex;

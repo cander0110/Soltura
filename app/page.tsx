@@ -159,9 +159,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <p className={styles.tileCta}>
-            Want to see how we do it? → <Link href="/demo" className={styles.tileCtaLink}>Request a Demo</Link>
-          </p>
         </div>
       </section>
 
