@@ -26,14 +26,6 @@
   max-width: 620px;
 }
 
-.heroSub {
-  font-size: var(--text-subheading);
-  color: var(--sol-gray);
-  line-height: 1.75;
-  margin-top: 1.5rem;
-  max-width: 60ch;
-}
-
 .heroCta {
   display: inline-flex;
   align-items: center;

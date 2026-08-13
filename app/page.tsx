@@ -106,9 +106,6 @@ export default function HomePage() {
           <h1 className={styles.heroHeadline}>
             We build what your operation is missing.
           </h1>
-          <p className={styles.heroSub}>
-            Soltura OS gives dispensaries the inventory intelligence Dutchie does not.
-          </p>
           <Link href="/soltura-os" className={styles.heroCta}>
             See what we have built <span className={styles.heroCtaArrow}>→</span>
           </Link>
