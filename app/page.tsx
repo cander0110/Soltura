@@ -131,9 +131,6 @@ export default function HomePage() {
           <div className={styles.aboutInner}>
             <span className="eyebrow">About Soltura</span>
             <h2 className={styles.aboutHeadline}>Built by people who&apos;ve been in the room.</h2>
-            <p className={styles.aboutBody}>
-              Soltura was founded by four professionals with backgrounds in dispensary operations, software engineering, financial strategy, and technology leadership. We understand the problem before we build the solution.
-            </p>
             <div className={styles.stats}>
               <div className={styles.stat}>
                 <span className={styles.statNum}>15+</span>
