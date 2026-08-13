@@ -229,7 +229,10 @@
 
 .productContent {
   width: 50%;
-  padding: var(--section-padding) var(--container-padding);
+  padding: 4rem var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .productHeadline {
@@ -238,7 +241,6 @@
   color: var(--sol-white);
   letter-spacing: -0.02em;
   line-height: 1.1;
-  margin-bottom: var(--space-3);
 }
 
 .productCta {
@@ -252,7 +254,7 @@
   text-transform: none;
   padding: 0.875rem 2rem;
   border-radius: 0;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   transition: background var(--transition-base);
 }
 
@@ -266,7 +268,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15%;
+  padding: 4rem;
 }
 
 .dashboardMock {
