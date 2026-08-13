@@ -37,9 +37,6 @@ const tiles = [
       </svg>
     ),
   },
-]
-
-const howWeDoIt = [
   {
     label: 'Audit record accuracy',
     sentence: 'Errors flagged before they become compliance problems.',
@@ -178,26 +175,6 @@ export default function HomePage() {
                 <h3 className={styles.tileLabel}>{tile.label}</h3>
                 <p className={styles.tileSentence}>{tile.sentence}</p>
                 <Link href={tile.href} className={styles.tileLink}>Learn more</Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How We Do It */}
-      <section id="how" className={styles.how}>
-        <div className="container">
-          <div className={styles.howHeader}>
-            <span className="eyebrow">How We Do It</span>
-            <h2 className={styles.sectionTitle}>Specific tools. Measurable outcomes.</h2>
-          </div>
-          <div className={styles.howGrid}>
-            {howWeDoIt.map((item) => (
-              <div key={item.label} className={styles.howCard}>
-                <div className={styles.howIcon}>{item.icon}</div>
-                <h3 className={styles.howLabel}>{item.label}</h3>
-                <p className={styles.howSentence}>{item.sentence}</p>
-                <Link href={item.href} className={styles.howLink}>Learn more</Link>
               </div>
             ))}
           </div>
