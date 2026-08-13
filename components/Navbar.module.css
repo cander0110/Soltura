@@ -55,11 +55,11 @@
   align-items: center;
   background: var(--sol-blue);
   color: var(--sol-white);
-  padding: var(--space-2) var(--space-5);
-  border-radius: 2px;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0;
   font-size: 0.875rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   transition: background var(--transition-base);
 }
 
@@ -80,7 +80,7 @@
 .bar1, .bar2, .bar3,
 .bar1open, .bar2open, .bar3open {
   display: block;
-  width: 22px;
+  width: 20px;
   height: 2px;
   background: var(--sol-dark);
   transition: all 0.25s ease;
@@ -110,11 +110,11 @@
     top: var(--nav-height);
     left: 0;
     right: 0;
+    width: 100%;
     background: var(--sol-white);
-    padding: var(--space-6);
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-4);
+    align-items: stretch;
+    gap: 0;
     border-top: 1px solid var(--sol-light);
     box-shadow: var(--shadow-md);
   }
@@ -123,9 +123,15 @@
     display: flex;
   }
 
-  .cta {
-    margin-top: var(--space-2);
+  .link {
     width: 100%;
+    padding: 1rem var(--space-6);
+    border-bottom: 1px solid var(--sol-light);
+  }
+
+  .cta {
+    margin: var(--space-4) var(--space-6) var(--space-6);
+    width: auto;
     justify-content: center;
   }
 }

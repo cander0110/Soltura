@@ -124,7 +124,7 @@ export default function ContactPage() {
     <div className={styles.page}>
       <div className={styles.sidebar}>
         <div className={styles.sidebarContent}>
-          <span className={styles.label}>Request a Demo</span>
+          <span className="eyebrow">Request a Demo</span>
           <h1 className={styles.heading}>Tell us about your operation.</h1>
           <p className={styles.sub}>
             Sofia will ask you a few questions. If it&apos;s a good fit, someone from our team will be in touch within one business day.

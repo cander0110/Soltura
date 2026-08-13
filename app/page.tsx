@@ -1,5 +1,7 @@
+import { Fragment } from 'react'
 import Link from 'next/link'
 import styles from './page.module.css'
+import ProductTour from '../components/ProductTour'
 
 const tiles = [
   {
@@ -7,8 +9,10 @@ const tiles = [
     sentence: 'Real-time visibility into the stock events your POS captures but doesn\'t surface.',
     href: '#soltura-os',
     icon: (
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
-        <path d="M4 20V10M12 20V4M20 20V14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <rect x="3" y="12" width="4" height="9" rx="0.5" />
+        <rect x="10" y="7" width="4" height="14" rx="0.5" />
+        <rect x="17" y="3" width="4" height="18" rx="0.5" />
       </svg>
     ),
   },
@@ -17,9 +21,9 @@ const tiles = [
     sentence: 'Automated flagging of adjustment errors, movement anomalies, and audit risks.',
     href: '#soltura-os',
     icon: (
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
-        <path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-        <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <path d="M12 2L4 5v6c0 5 3.5 9.74 8 11 4.5-1.26 8-6 8-11V5L12 2z" />
+        <polyline points="9 12 11 14 15 10" />
       </svg>
     ),
   },
@@ -28,9 +32,8 @@ const tiles = [
     sentence: 'We extend what Dutchie already does — without disrupting what\'s already working.',
     href: '#soltura-os',
     icon: (
-      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
-        <path d="M9 3v4M15 3v4M7 7h10v3a5 5 0 01-10 0V7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M12 15v6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <path d="M18 6L6 18M8 6v4M16 14v4M5 9h4M15 15h4" />
       </svg>
     ),
   },
@@ -38,32 +41,61 @@ const tiles = [
 
 const howWeDoIt = [
   {
-    title: 'Audit record accuracy',
-    body: 'LLM-assisted analysis of inventory adjustments and compliance records — flagging errors, missing comments, and high-risk transactions before they become audit problems.',
+    label: 'Audit record accuracy',
+    sentence: 'Errors flagged before they become compliance problems.',
+    href: '#soltura-os',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <rect x="6" y="4" width="12" height="17" rx="1.5" />
+        <path d="M9 4V3a1 1 0 011-1h4a1 1 0 011 1v1" />
+        <polyline points="9 13 11 15 15 10" />
+      </svg>
+    ),
   },
   {
-    title: 'Automated inventory intelligence',
-    body: 'Real-time monitoring of stock levels, package movement, and restocking needs — with notifications routed to the right people at the right time, not buried in a report.',
+    label: 'Automated inventory intelligence',
+    sentence: 'Real-time alerts when stock, packages, or returns need attention.',
+    href: '#soltura-os',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <path d="M6 10a6 6 0 0112 0c0 4 1.5 5.5 1.5 5.5H4.5S6 14 6 10z" />
+        <path d="M10 19a2 2 0 004 0" />
+      </svg>
+    ),
   },
   {
-    title: 'Operational data visibility',
-    body: 'In-house analytics that surface what your POS system captures but doesn\'t show you — transaction anomalies, shrinkage patterns, and reconciliation gaps across your operation.',
+    label: 'Operational data visibility',
+    sentence: 'Surface what your POS captures but never shows you.',
+    href: '#soltura-os',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    ),
   },
 ]
 
 const osFeatures = [
-  {
-    title: 'Sales floor monitoring',
-    body: 'Know the moment inventory hits zero and backstock is available.',
-  },
-  {
-    title: 'Transaction anomaly detection',
-    body: 'Flag large sales, suspicious activity, and return errors in real time.',
-  },
-  {
-    title: 'Compliance audit support',
-    body: 'Surface adjustment errors and package movement issues before they compound.',
-  },
+  { label: 'Sales floor monitoring', href: '/soltura-os' },
+  { label: 'Transaction anomaly detection', href: '/soltura-os' },
+  { label: 'Compliance audit support', href: '/soltura-os' },
+]
+
+const timelineStats = [
+  { label: 'Units sold', value: '9', color: '#22c55e' },
+  { label: 'Remove events', value: '5', color: 'var(--tl-critical)' },
+  { label: 'Cart clears', value: '2', color: 'var(--tl-warn)' },
+  { label: 'Cross-employee', value: '3×', color: 'var(--tl-critical)' },
+]
+
+const timelineRows = [
+  { time: '9:44 AM', badge: 'info', label: 'INFO', employee: 'Christian P.', cross: false, register: 'Register 24', receipt: '3441821' },
+  { time: '9:52 AM', badge: 'warn', label: 'WARN', employee: 'Sadiya C. +Samuel P.', cross: true, register: 'Register 26', receipt: '3441767' },
+  { time: '9:56 AM', badge: 'critical', label: 'CRITICAL', employee: 'Kaitlyn F. → Justin C.', cross: true, register: 'Register 28', receipt: '3441825' },
+  { time: '12:11 PM', badge: 'info', label: 'INFO', employee: 'Joseph G.', cross: false, register: 'Register 11', receipt: '3442031', gapAfter: true },
+  { time: '2:02 PM', badge: 'critical', label: 'REMOVE', employee: 'Anthony Davis', cross: true, register: 'Register 11', receipt: '3442031' },
+  { time: '7:36 PM', badge: 'critical', label: 'REMOVE', employee: 'Samuel P.', cross: false, register: 'Register 26', receipt: '3441767' },
 ]
 
 const team = [
@@ -79,7 +111,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <span className={styles.eyebrow}>AI Solutions & Technology Consulting</span>
+          <span className="eyebrow">AI Solutions & Technology Consulting</span>
           <h1 className={styles.heroHeadline}>
             We build what your operation is missing.
           </h1>
@@ -100,7 +132,7 @@ export default function HomePage() {
       <section id="about" className={styles.about}>
         <div className="container">
           <div className={styles.aboutInner}>
-            <span className={styles.aboutEyebrow}>About Soltura</span>
+            <span className="eyebrow">About Soltura</span>
             <h2 className={styles.aboutHeadline}>Built by people who&apos;ve been in the room.</h2>
             <p className={styles.aboutBody}>
               Soltura was founded by four professionals with backgrounds in dispensary operations, software engineering, financial strategy, and technology leadership. We understand the problem before we build the solution.
@@ -127,7 +159,7 @@ export default function HomePage() {
       <section id="what-we-do" className={styles.whatWeDo}>
         <div className="container">
           <div className={styles.sectionHeader}>
-            <span className={styles.whatWeDoEyebrow}>What We Do</span>
+            <span className="eyebrow">What We Do</span>
             <h2 className={styles.whatWeDoHeadline}>What can we build together?</h2>
             <p className={styles.whatWeDoSub}>
               We solve operational problems with AI-powered software and strategic consulting.
@@ -139,7 +171,7 @@ export default function HomePage() {
                 <div className={styles.tileIcon}>{tile.icon}</div>
                 <h3 className={styles.tileLabel}>{tile.label}</h3>
                 <p className={styles.tileSentence}>{tile.sentence}</p>
-                <Link href={tile.href} className={styles.tileLink}>Learn more →</Link>
+                <Link href={tile.href} className={styles.tileLink}>Learn more</Link>
               </div>
             ))}
           </div>
@@ -150,17 +182,16 @@ export default function HomePage() {
       <section id="how" className={styles.how}>
         <div className="container">
           <div className={styles.howHeader}>
-            <span className={styles.label}>How We Do It</span>
+            <span className="eyebrow">How We Do It</span>
             <h2 className={styles.sectionTitle}>Specific tools. Measurable outcomes.</h2>
-            <p className={styles.howIntro}>
-              We don&apos;t offer generic solutions. Every engagement starts with understanding your operation — your data, your workflows, your pain points. From there we build or configure systems that address the exact problems costing you time and revenue.
-            </p>
           </div>
           <div className={styles.howGrid}>
             {howWeDoIt.map((item) => (
-              <div key={item.title} className={styles.howCard}>
-                <h3 className={styles.howTitle}>{item.title}</h3>
-                <p className={styles.howBody}>{item.body}</p>
+              <div key={item.label} className={styles.howCard}>
+                <div className={styles.howIcon}>{item.icon}</div>
+                <h3 className={styles.howLabel}>{item.label}</h3>
+                <p className={styles.howSentence}>{item.sentence}</p>
+                <Link href={item.href} className={styles.howLink}>Learn more</Link>
               </div>
             ))}
           </div>
@@ -170,50 +201,96 @@ export default function HomePage() {
       {/* Soltura OS */}
       <section id="soltura-os" className={styles.product}>
         <div className={styles.productContent}>
-          <span className={styles.productEyebrow}>Our Product</span>
+          <span className="eyebrow">Our Product</span>
           <h2 className={styles.productHeadline}>Soltura OS</h2>
           <p className={styles.productSubheadline}>Inventory intelligence for Dutchie-based dispensaries.</p>
           <p className={styles.productBody}>
-            Soltura OS integrates directly with your existing Dutchie instance — adding real-time monitoring, automated alerts, and compliance flagging without changing your current workflow.
+            Integrates directly with your Dutchie instance. No workflow changes. No write access to your system.
           </p>
-          <div className={styles.productFeatures}>
+          <div className={styles.featureLinks}>
             {osFeatures.map((f) => (
-              <div key={f.title} className={styles.featureRow}>
-                <h3 className={styles.featureTitle}>{f.title}</h3>
-                <p className={styles.featureBody}>{f.body}</p>
-              </div>
+              <Link key={f.label} href={f.href} className={styles.featureLink}>{f.label}</Link>
             ))}
           </div>
           <Link href="/demo" className={styles.productCta}>Request a Demo</Link>
         </div>
         <div className={styles.productVisual}>
-          {/* Replace with real dashboard screenshot */}
-          <div className={styles.dashboardMock} aria-hidden="true">
-            <span className={styles.dashboardLabel}>Soltura OS — Live Feed</span>
-            <div className={styles.dashboardRow}>
-              <span className={`${styles.dashboardDot} ${styles.dashboardDotGold}`} />
-              <span className={styles.dashboardText}>Restock alert — Sales Floor A</span>
-              <span className={styles.dashboardTime}>2m ago</span>
+          <div className={styles.browserFrame}>
+            <div className={styles.browserFrameBar}>
+              <span className={`${styles.trafficDot} ${styles.trafficRed}`} />
+              <span className={`${styles.trafficDot} ${styles.trafficYellow}`} />
+              <span className={`${styles.trafficDot} ${styles.trafficGreen}`} />
             </div>
-            <div className={styles.dashboardRow}>
-              <span className={`${styles.dashboardDot} ${styles.dashboardDotGreen}`} />
-              <span className={styles.dashboardText}>Transaction reconciled</span>
-              <span className={styles.dashboardTime}>14m ago</span>
-            </div>
-            <div className={styles.dashboardRow}>
-              <span className={`${styles.dashboardDot} ${styles.dashboardDotGold}`} />
-              <span className={styles.dashboardText}>Adjustment flagged for review</span>
-              <span className={styles.dashboardTime}>26m ago</span>
+            <div className={styles.timelineWrap}>
+              <div className="sol-tl">
+                <div className="sol-tl-topbar">
+                  <span className="sol-tl-topbar-left">PACKAGE INVESTIGATION</span>
+                  <span className="sol-tl-topbar-right">Gold Leaf MD · License DA-23-00084</span>
+                </div>
+
+                <div className="sol-tl-pkg-header">
+                  <div className="sol-tl-pkg-name">Curio | Everyday — Gush Mints Pre Pack 3.5g</div>
+                  <div className="sol-tl-pkg-id">1A40303...68582 · May 23, 2026</div>
+                  <div className="sol-tl-stats">
+                    {timelineStats.map((s) => (
+                      <div className="sol-tl-stat" key={s.label}>
+                        <div className="sol-tl-stat-label">{s.label}</div>
+                        <div className="sol-tl-stat-value" style={{ color: s.color }}>{s.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="sol-tl-summary">
+                  <span className="sol-tl-summary-badge">AI</span>
+                  <span className="sol-tl-summary-text">
+                    17 cart events across 8 employees. Receipt 3442031 — item held 111 min before removal. 3 cross-employee removes flagged.
+                  </span>
+                </div>
+
+                <div className="sol-tl-columns">
+                  <span className="sol-tl-col-head">TIME</span>
+                  <span className="sol-tl-col-head">ACTION</span>
+                  <span className="sol-tl-col-head">EMPLOYEE</span>
+                  <span className="sol-tl-col-head">REGISTER</span>
+                  <span className="sol-tl-col-head">RECEIPT</span>
+                </div>
+
+                {timelineRows.map((row, i) => (
+                  <Fragment key={i}>
+                    <div className={`sol-tl-row${row.badge === 'critical' ? ' sol-tl-row-critical' : row.badge === 'warn' ? ' sol-tl-row-warn' : ''}`}>
+                      <span className="sol-tl-time">{row.time}</span>
+                      <span className={`sol-tl-badge sol-tl-badge-${row.badge}`}>{row.label}</span>
+                      <span className="sol-tl-employee">
+                        {row.employee}
+                        {row.cross && <span className="sol-tl-cross">CROSS-EMP</span>}
+                      </span>
+                      <span className="sol-tl-register">{row.register}</span>
+                      <span className="sol-tl-receipt">{row.receipt}</span>
+                    </div>
+                    {row.gapAfter && (
+                      <div className="sol-tl-gap">
+                        <span className="sol-tl-gap-line" />
+                        <span>⚠ 111 min gap — item in open cart</span>
+                        <span className="sol-tl-gap-line" />
+                      </div>
+                    )}
+                  </Fragment>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Product Tour */}
+      <ProductTour />
+
       {/* Team */}
       <section id="team" className={styles.team}>
         <div className="container">
           <div className={styles.teamHeader}>
-            <span className={styles.teamEyebrow}>The Team</span>
+            <span className="eyebrow">The Team</span>
             <h2 className={styles.teamHeadline}>The people behind the product.</h2>
           </div>
           <div className={styles.teamGrid}>

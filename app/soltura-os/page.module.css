@@ -8,16 +8,6 @@
   background: var(--sol-dark);
 }
 
-.eyebrow {
-  display: inline-block;
-  font-size: var(--text-label);
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--sol-gold);
-  margin-bottom: var(--space-4);
-}
-
 .headline {
   font-size: var(--text-display);
   font-weight: 800;
@@ -36,8 +26,8 @@
 .body {
   font-size: var(--text-body);
   color: var(--sol-light);
-  line-height: 1.7;
-  max-width: 560px;
+  line-height: 1.75;
+  max-width: 60ch;
   margin-bottom: var(--space-8);
 }
 
@@ -46,6 +36,9 @@
   background: var(--sol-gold);
   color: var(--sol-dark);
   font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
   padding: 0.875rem 2rem;
   border-radius: 0;
   transition: background var(--transition-base);
@@ -192,6 +185,9 @@
   background: var(--sol-gold);
   color: var(--sol-dark);
   font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
   padding: 1rem 2.5rem;
   border-radius: 0;
   transition: background var(--transition-base);

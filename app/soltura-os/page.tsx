@@ -22,7 +22,7 @@ export default function SolturaOsPage() {
       {/* Header */}
       <section className={styles.header}>
         <div className="container">
-          <span className={styles.eyebrow}>Our Product</span>
+          <span className="eyebrow">Our Product</span>
           <h1 className={styles.headline}>Soltura OS</h1>
           <p className={styles.subheadline}>Inventory intelligence for Dutchie-based dispensaries.</p>
           <p className={styles.body}>

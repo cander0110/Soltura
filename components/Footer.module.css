@@ -18,8 +18,10 @@
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--sol-white);
 }
 
@@ -103,7 +105,8 @@
 
   .bottom {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: var(--space-3);
   }
 }
