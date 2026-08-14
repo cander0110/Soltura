@@ -416,7 +416,7 @@
 /* ── Bottom CTA ──────────────────────────────────── */
 .cta {
   background: var(--sol-blue);
-  padding: 6rem var(--container-padding);
+  padding: 5rem var(--container-padding);
 }
 
 .ctaInner {
@@ -426,7 +426,7 @@
 }
 
 .ctaTitle {
-  font-size: var(--text-heading);
+  font-size: clamp(1.75rem, 3vw, 2rem);
   font-weight: 700;
   color: var(--sol-white);
   letter-spacing: -0.02em;
@@ -436,17 +436,17 @@
 .ctaButtons {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
   justify-content: center;
   align-items: center;
 }
 
 .ctaPrimary {
   display: inline-block;
+  width: auto;
   background: var(--sol-gold);
   color: var(--sol-dark);
   font-weight: 700;
-  padding: 1rem 2.5rem;
+  padding: 1rem 3rem;
   border-radius: 0;
   transition: background var(--transition-base);
 }
@@ -456,6 +456,8 @@
 }
 
 .ctaEmail {
+  display: inline-block;
+  margin-top: 1rem;
   font-size: 0.9375rem;
   color: var(--sol-light);
   transition: color var(--transition-base);
