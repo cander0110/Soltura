@@ -1,81 +1,79 @@
 import Link from 'next/link'
+import ProductTour from '../../components/ProductTour'
 import styles from './page.module.css'
 
 const features = [
   {
-    title: 'Sales floor monitoring',
-    body: 'Know the moment inventory hits zero and backstock is available.',
+    label: 'Sales floor monitoring',
+    sentence: 'Know the moment inventory hits zero and backstock is ready.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <path d="M6 10a6 6 0 0112 0c0 4 1.5 5.5 1.5 5.5H4.5S6 14 6 10z" />
+        <path d="M10 19a2 2 0 004 0" />
+      </svg>
+    ),
   },
   {
-    title: 'Transaction anomaly detection',
-    body: 'Flag large sales, suspicious activity, and return errors in real time.',
+    label: 'Transaction anomaly detection',
+    sentence: 'Flag large sales, return errors, and suspicious activity.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    ),
   },
   {
-    title: 'Compliance audit support',
-    body: 'Surface adjustment errors and package movement issues before they compound.',
+    label: 'Compliance audit support',
+    sentence: 'Surface adjustment errors before they become audit findings.',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+        <rect x="6" y="4" width="12" height="17" rx="1.5" />
+        <path d="M9 4V3a1 1 0 011-1h4a1 1 0 011 1v1" />
+        <polyline points="9 13 11 15 15 10" />
+      </svg>
+    ),
   },
 ]
 
 export default function SolturaOsPage() {
   return (
     <div className={styles.page}>
-      {/* Header */}
-      <section className={styles.header}>
-        <div className="container">
-          <span className="eyebrow">Our Product</span>
-          <h1 className={styles.headline}>Soltura OS</h1>
-          <p className={styles.subheadline}>Inventory intelligence for Dutchie-based dispensaries.</p>
-          <p className={styles.body}>
-            Soltura OS integrates directly with your existing Dutchie instance — adding real-time monitoring, automated alerts, and compliance flagging without changing your current workflow.
-          </p>
-          <Link href="/demo" className={styles.headerCta}>Request a Demo</Link>
+      {/* Hero */}
+      <section className={styles.hero}>
+        <div className={styles.inner}>
+          <span className={`eyebrow ${styles.heroEyebrow}`}>Soltura OS</span>
+          <h1 className={styles.headline}>Inventory intelligence built for how dispensaries actually operate.</h1>
+          <p className={styles.subline}>Three focused workspaces. Every event surfaced in real time.</p>
         </div>
       </section>
 
-      {/* Features */}
+      {/* Product Tour */}
+      <ProductTour />
+
+      {/* Feature List */}
       <section className={styles.features}>
-        <div className="container">
-          <div className={styles.featuresGrid}>
+        <div className={styles.inner}>
+          <div className={styles.tileGrid}>
             {features.map((f) => (
-              <div key={f.title} className={styles.featureCard}>
-                <h3 className={styles.featureTitle}>{f.title}</h3>
-                <p className={styles.featureBody}>{f.body}</p>
+              <div key={f.label} className={styles.tile}>
+                <div className={styles.tileIcon}>{f.icon}</div>
+                <h3 className={styles.tileLabel}>{f.label}</h3>
+                <p className={styles.tileSentence}>{f.sentence}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Live feed visual */}
-      <section className={styles.visual}>
-        <div className={styles.visualInner}>
-          {/* Replace with real dashboard screenshot */}
-          <div className={styles.dashboardMock} aria-hidden="true">
-            <span className={styles.dashboardLabel}>Soltura OS — Live Feed</span>
-            <div className={styles.dashboardRow}>
-              <span className={`${styles.dashboardDot} ${styles.dashboardDotGold}`} />
-              <span className={styles.dashboardText}>Restock alert — Sales Floor A</span>
-              <span className={styles.dashboardTime}>2m ago</span>
-            </div>
-            <div className={styles.dashboardRow}>
-              <span className={`${styles.dashboardDot} ${styles.dashboardDotGreen}`} />
-              <span className={styles.dashboardText}>Transaction reconciled</span>
-              <span className={styles.dashboardTime}>14m ago</span>
-            </div>
-            <div className={styles.dashboardRow}>
-              <span className={`${styles.dashboardDot} ${styles.dashboardDotGold}`} />
-              <span className={styles.dashboardText}>Adjustment flagged for review</span>
-              <span className={styles.dashboardTime}>26m ago</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Closing CTA */}
+      {/* CTA */}
       <section className={styles.cta}>
         <div className={styles.ctaInner}>
-          <h2 className={styles.ctaTitle}>See if Soltura OS fits your operation.</h2>
-          <Link href="/demo" className={styles.ctaButton}>Request a Demo</Link>
+          <h2 className={styles.ctaTitle}>Let us talk about what your operation needs.</h2>
+          <div className={styles.ctaButtons}>
+            <Link href="/demo" className={styles.ctaPrimary}>Start the Conversation</Link>
+            <a href="mailto:hello@soltura.ai" className={styles.ctaEmail}>or email us directly</a>
+          </div>
         </div>
       </section>
     </div>

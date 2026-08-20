@@ -1,7 +1,6 @@
 import { Fragment } from 'react'
 import Link from 'next/link'
 import styles from './page.module.css'
-import ProductTour from '../components/ProductTour'
 
 const tiles = [
   {
@@ -89,53 +88,46 @@ const timelineRows = [
   { time: '7:36 PM', badge: 'critical', label: 'REMOVE', employee: 'Employee C', cross: false, register: 'Register 2', receipt: '0000002' },
 ]
 
-const team = [
-  { name: 'Liam Cox', role: 'CEO & CIO' },
-  { name: 'Connor Anderson', role: 'CFO' },
-  { name: 'Chris Mudd', role: 'CTO' },
-  { name: 'Joe Perzanowski', role: 'COO' },
-]
-
 export default function HomePage() {
   return (
     <>
       {/* Hero */}
       <section className={styles.hero}>
+        <img
+          src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80"
+          alt=""
+          className={styles.heroImage}
+        />
+        <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={styles.heroContent}>
-          <span className="eyebrow">AI Solutions & Technology Consulting</span>
+          <span className={`eyebrow ${styles.heroEyebrow}`}>AI Solutions & Technology Consulting</span>
           <h1 className={styles.heroHeadline}>
             We build what your operation is missing.
           </h1>
-          <Link href="/soltura-os" className={styles.heroCta}>
-            See what we have built <span className={styles.heroCtaArrow}>→</span>
-          </Link>
-        </div>
-        <div className={styles.heroImageWrap}>
-          {/* Replace gradient with real team photo — outdoor, natural light, aspect ratio ~3:2 */}
-          <div className={styles.heroImagePlaceholder} aria-hidden="true" />
+          <div className={styles.heroButtons}>
+            <Link href="/demo" className={styles.heroBtnPrimary}>Request a Demo</Link>
+            <Link href="/soltura-os" className={styles.heroBtnSecondary}>See Soltura OS</Link>
+          </div>
         </div>
       </section>
 
-      {/* Who We Are */}
-      <section id="about" className={styles.about}>
-        <div className="container">
-          <div className={styles.aboutInner}>
-            <span className="eyebrow">About Soltura</span>
-            <h2 className={styles.aboutHeadline}>Built by people who have been in the room.</h2>
-            <div className={styles.stats}>
-              <div className={styles.stat}>
-                <span className={styles.statNum}>15+</span>
-                <span className={styles.statLabel}>Years combined dispensary experience</span>
+      {/* Soltura OS */}
+      <section id="soltura-os" className={styles.product}>
+        <div className={styles.productContent}>
+          <span className={`eyebrow ${styles.productEyebrow}`}>Our Product</span>
+          <h2 className={styles.productHeadline}>Soltura OS</h2>
+          <p className={styles.productSubcopy}>Real-time inventory intelligence for Dutchie-based dispensaries.</p>
+        </div>
+        <div className={styles.productVisual}>
+          <div className={styles.dashboardMock}>
+            <span className={styles.dashboardLabel}>Soltura OS — Live Feed</span>
+            {liveFeed.map((item) => (
+              <div className={styles.dashboardRow} key={item.text}>
+                <span className={`${styles.dashboardDot} ${item.color === 'green' ? styles.dashboardDotGreen : styles.dashboardDotGold}`} />
+                <span className={styles.dashboardText}>{item.text}</span>
+                <span className={styles.dashboardTime}>{item.time}</span>
               </div>
-              <div className={styles.stat}>
-                <span className={styles.statNum}>4</span>
-                <span className={styles.statLabel}>Founders</span>
-              </div>
-              <div className={styles.stat}>
-                <span className={styles.statNum}>1</span>
-                <span className={styles.statLabel}>Focused product</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -153,27 +145,6 @@ export default function HomePage() {
                 <div className={styles.tileIcon}>{tile.icon}</div>
                 <h3 className={styles.tileLabel}>{tile.label}</h3>
                 <p className={styles.tileSentence}>{tile.sentence}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Soltura OS */}
-      <section id="soltura-os" className={styles.product}>
-        <div className={styles.productContent}>
-          <span className="eyebrow">Our Product</span>
-          <h2 className={styles.productHeadline}>Soltura OS</h2>
-          <Link href="/demo" className={styles.productCta}>Request a Demo</Link>
-        </div>
-        <div className={styles.productVisual}>
-          <div className={styles.dashboardMock}>
-            <span className={styles.dashboardLabel}>Soltura OS — Live Feed</span>
-            {liveFeed.map((item) => (
-              <div className={styles.dashboardRow} key={item.text}>
-                <span className={`${styles.dashboardDot} ${item.color === 'green' ? styles.dashboardDotGreen : styles.dashboardDotGold}`} />
-                <span className={styles.dashboardText}>{item.text}</span>
-                <span className={styles.dashboardTime}>{item.time}</span>
               </div>
             ))}
           </div>
@@ -242,33 +213,6 @@ export default function HomePage() {
                   </div>
                 )}
               </Fragment>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Product Tour */}
-      <ProductTour />
-
-      {/* Team */}
-      <section id="team" className={styles.team}>
-        <div className="container">
-          <div className={styles.teamHeader}>
-            <span className="eyebrow">The Team</span>
-            <h2 className={styles.teamHeadline}>The people behind the product.</h2>
-          </div>
-          <div className={styles.teamGrid}>
-            {team.map((member) => (
-              <div key={member.name} className={styles.teamCard}>
-                {/* Replace with real headshot — outdoor, natural light */}
-                <div className={styles.teamPhoto} aria-hidden="true">
-                  <span className={styles.teamInitials}>
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <h3 className={styles.teamName}>{member.name}</h3>
-                <p className={styles.teamRole}>{member.role}</p>
-              </div>
             ))}
           </div>
         </div>

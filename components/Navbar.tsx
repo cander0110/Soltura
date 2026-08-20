@@ -22,10 +22,9 @@ export default function Navbar() {
         </Link>
 
         <div className={`${styles.links} ${menuOpen ? styles.open : ''}`}>
-          <Link href="/#about" className={styles.link} onClick={() => setMenuOpen(false)}>About</Link>
+          <Link href="/about" className={styles.link} onClick={() => setMenuOpen(false)}>About</Link>
           <Link href="/#what-we-do" className={styles.link} onClick={() => setMenuOpen(false)}>What We Do</Link>
           <Link href="/soltura-os" className={styles.link} onClick={() => setMenuOpen(false)}>Soltura OS</Link>
-          <Link href="/#team" className={styles.link} onClick={() => setMenuOpen(false)}>Team</Link>
           <Link href="/demo" className={styles.cta} onClick={() => setMenuOpen(false)}>Get in Touch</Link>
         </div>
 

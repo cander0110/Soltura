@@ -12,9 +12,8 @@ export default function Footer() {
         </div>
 
         <nav className={styles.nav}>
-          <Link href="/#about" className={styles.navLink}>About</Link>
+          <Link href="/about" className={styles.navLink}>About</Link>
           <Link href="/soltura-os" className={styles.navLink}>Soltura OS</Link>
-          <Link href="/#team" className={styles.navLink}>Team</Link>
           <Link href="/demo" className={styles.navLink}>Contact</Link>
         </nav>
 

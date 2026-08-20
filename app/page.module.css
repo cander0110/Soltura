@@ -1,73 +1,86 @@
 /* ── Hero ────────────────────────────────────────── */
 .hero {
-  display: flex;
+  position: relative;
   width: 100%;
-  height: 85vh;
-  margin-top: var(--nav-height);
-}
-
-.heroContent {
-  width: 45%;
-  flex-shrink: 0;
-  background: var(--sol-white);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 var(--container-padding);
-}
-
-.heroHeadline {
-  font-size: var(--text-hero);
-  font-weight: 800;
-  line-height: 1.05;
-  color: var(--sol-dark);
-  letter-spacing: -0.02em;
-  font-feature-settings: "kern" 1, "liga" 1;
-  max-width: 620px;
-}
-
-.heroCta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4em;
-  width: fit-content;
-  margin-top: 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--sol-blue);
-  transition: color var(--transition-base);
-}
-
-.heroCta:hover {
-  color: var(--sol-gold);
-}
-
-.heroCtaArrow {
-  display: inline-block;
-  transition: transform var(--transition-base);
-}
-
-.heroCta:hover .heroCtaArrow {
-  transform: translateX(4px);
-}
-
-.heroImageWrap {
-  width: 55%;
-  flex-shrink: 0;
-  height: 100%;
-}
-
-.heroImagePlaceholder {
-  /* Replace gradient with real team photo — outdoor, natural light, aspect ratio ~3:2 */
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(ellipse at 40% 60%, #FFC709 0%, #1736F5 45%, #0D1B2A 100%);
+  height: 100vh;
+  overflow: hidden;
 }
 
 .heroImage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(to top, rgba(13, 27, 42, 0.75) 0%, rgba(13, 27, 42, 0.2) 50%, transparent 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0 4rem 4rem;
+}
+
+.heroEyebrow {
+  color: var(--sol-gold);
+}
+
+.heroHeadline {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--sol-white);
+  letter-spacing: -0.02em;
+  font-feature-settings: "kern" 1, "liga" 1;
+  max-width: 700px;
+}
+
+.heroButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.heroBtnPrimary {
+  background: var(--sol-gold);
+  color: var(--sol-dark);
+  font-weight: 700;
+  padding: 0.875rem 2.5rem;
+  border-radius: 4px;
+  border: none;
+  transition: background var(--transition-base);
+}
+
+.heroBtnPrimary:hover {
+  background: var(--sol-white);
+}
+
+.heroBtnSecondary {
+  background: transparent;
+  color: var(--sol-white);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  padding: 0.875rem 2.5rem;
+  border-radius: 4px;
+  transition: border-color var(--transition-base);
+}
+
+.heroBtnSecondary:hover {
+  border-color: var(--sol-white);
 }
 
 /* ── Shared ──────────────────────────────────────── */
@@ -215,6 +228,10 @@
   justify-content: center;
 }
 
+.productEyebrow {
+  color: var(--sol-gold);
+}
+
 .productHeadline {
   font-size: var(--text-display);
   font-weight: 800;
@@ -223,23 +240,10 @@
   line-height: 1.1;
 }
 
-.productCta {
-  display: inline-block;
-  width: fit-content;
-  background: var(--sol-gold);
-  color: var(--sol-dark);
-  font-weight: 700;
-  font-size: 0.9375rem;
-  letter-spacing: 0.04em;
-  text-transform: none;
-  padding: 0.875rem 2rem;
-  border-radius: 0;
-  margin-top: 2rem;
-  transition: background var(--transition-base);
-}
-
-.productCta:hover {
-  background: var(--sol-white);
+.productSubcopy {
+  font-size: var(--text-subheading);
+  color: var(--sol-light);
+  margin-top: var(--space-4);
 }
 
 .productVisual {
@@ -484,23 +488,27 @@
 
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .heroImageWrap {
-    order: -1;
-    width: 100%;
-    height: 45vh;
+    height: 100vh;
   }
 
   .heroContent {
-    width: 100%;
-    padding: 2.5rem 1.5rem;
+    padding: 2rem;
   }
 
   .heroHeadline {
     font-size: clamp(2.25rem, 8vw, 3rem);
+  }
+
+  .heroButtons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .heroBtnPrimary,
+  .heroBtnSecondary {
+    width: 100%;
+    text-align: center;
   }
 
   .tileGrid {

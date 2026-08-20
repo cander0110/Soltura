@@ -1,0 +1,259 @@
+.page {
+  padding-top: var(--nav-height);
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ── Page Hero ───────────────────────────────────── */
+.hero {
+  padding: 6rem var(--container-padding);
+  background: var(--sol-dark);
+}
+
+.heroEyebrow {
+  color: var(--sol-gold);
+}
+
+.headline {
+  font-size: var(--text-display);
+  font-weight: 800;
+  color: var(--sol-white);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: var(--space-5);
+}
+
+.subline {
+  font-size: var(--text-subheading);
+  color: var(--sol-gold);
+}
+
+/* ── Stats ───────────────────────────────────────── */
+.stats {
+  padding: 4rem var(--container-padding);
+  background: var(--sol-white);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  text-align: center;
+}
+
+.statNum {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--sol-blue);
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: var(--sol-gray);
+  line-height: 1.5;
+}
+
+/* ── Team ────────────────────────────────────────── */
+.team {
+  padding: 4rem var(--container-padding);
+  background: var(--sol-white);
+}
+
+.teamHeader {
+  max-width: 680px;
+  margin-bottom: var(--space-12);
+}
+
+.teamHeadline {
+  font-size: var(--text-heading);
+  font-weight: 700;
+  color: var(--sol-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.teamCard {
+  background: var(--sol-white);
+  border: 1px solid var(--sol-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.teamCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+/* Replace with real headshot — outdoor, natural light */
+.teamPhoto {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--sol-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.teamInitials {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--sol-gray);
+}
+
+.teamName {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--sol-dark);
+  margin-top: 1rem;
+}
+
+.teamRole {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--sol-blue);
+  margin-top: var(--space-1);
+}
+
+/* ── Company / Approach ──────────────────────────── */
+.company {
+  padding: 5rem var(--container-padding);
+  background: var(--sol-light);
+}
+
+.companyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+}
+
+.companyHeadline {
+  font-size: var(--text-heading);
+  font-weight: 700;
+  color: var(--sol-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.companyBody {
+  font-size: var(--text-body);
+  color: var(--sol-gray);
+  line-height: 1.7;
+}
+
+.companyRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.principle {
+  font-weight: 600;
+  color: var(--sol-dark);
+  font-size: 1rem;
+  border-left: 3px solid var(--sol-gold);
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.principle:last-child {
+  margin-bottom: 0;
+}
+
+/* ── CTA ─────────────────────────────────────────── */
+.cta {
+  background: var(--sol-blue);
+  padding: 5rem var(--container-padding);
+}
+
+.ctaInner {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-size: clamp(1.75rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--sol-white);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.ctaButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ctaPrimary {
+  display: inline-block;
+  width: auto;
+  background: var(--sol-gold);
+  color: var(--sol-dark);
+  font-weight: 700;
+  padding: 1rem 3rem;
+  border-radius: 0;
+  transition: background var(--transition-base);
+}
+
+.ctaPrimary:hover {
+  background: var(--sol-white);
+}
+
+.ctaEmail {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+  color: var(--sol-light);
+  transition: color var(--transition-base);
+}
+
+.ctaEmail:hover {
+  color: var(--sol-gold);
+}
+
+/* ── Responsive ──────────────────────────────────── */
+@media (max-width: 1024px) {
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .companyGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
