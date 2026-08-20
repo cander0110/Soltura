@@ -94,7 +94,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className={styles.hero}>
         <img
-          src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=1800&q=80"
+          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1800&q=80"
           alt=""
           className={styles.heroImage}
         />
